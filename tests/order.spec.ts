@@ -15,7 +15,7 @@ test.describe('Order as guest', () => {
     homePage = await HomePage.load(page);
   });
 
-  test.only('Order Success: should see order status in progress', async () => {
+  test('Order Success: should see order status in progress', async () => {
     expect(homePage).toBeInstanceOf(HomePage);
     await homePage.clickOrderNow();
     await homePage.clickPickUp();

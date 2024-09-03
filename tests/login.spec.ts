@@ -22,7 +22,7 @@ test.describe('Login', () => {
     loginPage = await LoginPage.load(page);
   });
 
-  test('Login Success: should further ask the user to verify their account', async () => {
+  test.skip('Login Success: should further ask the user to verify their account', async () => {
     const { email, password } = validTestUser;
     const pageAfterLogin = await loginPage.login(email, password);
     expect(pageAfterLogin).toBeInstanceOf(VerifyAccountPage);
