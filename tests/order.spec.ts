@@ -16,7 +16,7 @@ test.describe('Order as guest', () => {
   });
 
   test('Order Success: should see order status in progress', async () => {
-    test.slow();
+    // test.slow();
     expect(homePage).toBeInstanceOf(HomePage);
     await homePage.clickOrderNow();
     await homePage.clickPickUp();
@@ -36,7 +36,7 @@ test.describe('Order as guest', () => {
 
     await paymentPage.enterContactDetails();
     await paymentPage.enterPaymentDetails();
-    // await paymentPage.solveRecaptcha();
+    await paymentPage.solveRecaptcha();
     // const statusPage = await paymentPage.clickPayNow();
     // expect(statusPage).toBeInstanceOf(StatusPage);
   });

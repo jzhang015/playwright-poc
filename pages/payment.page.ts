@@ -25,8 +25,9 @@ export class PaymentPage {
     const payNowButtonLocator = page.getByTestId('PAY NOW');
 
     await Promise.all([
-      contactDetailsTitleLocator.waitFor(),
-      cardOptionLocator.waitFor(),
+
+      contactDetailsTitleLocator.waitFor({ timeout: 30000 }),
+      cardOptionLocator.waitFor({ timeout: 50000 }),
     ]).catch(err => {
       throw 'Payment/Checkout Page Loaing Failed !'
     })
