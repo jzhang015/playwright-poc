@@ -16,7 +16,6 @@ test.describe('Order as guest', () => {
   });
 
   test('Order Success: should see order status in progress', async () => {
-    // test.slow();
     expect(homePage).toBeInstanceOf(HomePage);
     await homePage.clickOrderNow();
     await homePage.clickPickUp();

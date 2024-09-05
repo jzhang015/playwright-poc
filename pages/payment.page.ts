@@ -67,7 +67,7 @@ export class PaymentPage {
   async solveRecaptcha() {
     const frame = this.page.frameLocator('iframe[title="reCAPTCHA"]');
     await frame.locator('span[role="checkbox"]').click({delay: 1000});
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 4000));
   }
 
   async clickPayNow(): Promise<StatusPage> {
