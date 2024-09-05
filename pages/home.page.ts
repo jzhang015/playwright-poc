@@ -53,7 +53,8 @@ export class HomePage {
   }
 
   async confirmOrderSetUp(): Promise<MenuPage> {
-    await this.confirmLocator.click();
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await this.confirmLocator.click({delay: 1000});
 
     return await MenuPage.load(this.page);
   }

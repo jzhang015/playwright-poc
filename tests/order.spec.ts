@@ -37,7 +37,7 @@ test.describe('Order as guest', () => {
     await paymentPage.enterContactDetails();
     await paymentPage.enterPaymentDetails();
     await paymentPage.solveRecaptcha();
-    // const statusPage = await paymentPage.clickPayNow();
-    // expect(statusPage).toBeInstanceOf(StatusPage);
+    const statusPage = await paymentPage.clickPayNow();
+    expect(statusPage).toBeInstanceOf(StatusPage);
   });
 });

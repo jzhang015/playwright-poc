@@ -47,10 +47,14 @@ export class MenuPage {
   }
 
   async selectItem() {
-    await this.burritosLocator.click();
-    await this.itemOnlyLocator.click();
-    await this.chickenLocator.click();
-    await this.spicyLocator.click();
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await this.burritosLocator.click({delay: 1000});
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await this.itemOnlyLocator.click({delay: 1000});
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await this.chickenLocator.click({delay: 1000});
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await this.spicyLocator.click({delay: 1000});
   }
 
   async clickAddToYourOrder() {
