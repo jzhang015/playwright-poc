@@ -26,7 +26,7 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 0 : 1,
+  retries: process.env.CI ? 0 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -35,13 +35,15 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
-    baseURL: 'https://no-recaptcha.order.staging.apps.gyg.com.au/',
+    baseURL: 'https://main.order.staging.apps.gyg.com.au',
+    //'https://no-recaptcha.order.staging.apps.gyg.com.au/',
     // 'https://main.order.staging.apps.gyg.com.au',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
     video: 'on',
     //'retain-on-failure',
     screenshot: 'only-on-failure',
+    actionTimeout: 10 * 1000
   },
 
   /* Configure projects for major browsers */

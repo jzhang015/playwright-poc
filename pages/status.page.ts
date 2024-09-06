@@ -14,9 +14,9 @@ export class StatusPage {
     const orderStatusTextLocator = page.getByText('IN PROGRESS');
 
     await Promise.all([
-      // headerTitleTextLocactor.waitFor(),
-      // orderStatusTextLocator.waitFor(),
-      new Promise((resolve) => setTimeout(resolve, 1000))
+      new Promise((resolve) => setTimeout(resolve, 1000)),
+      headerTitleTextLocactor.waitFor(),
+      orderStatusTextLocator.waitFor(),
     ]).catch(err => {
       throw 'Order Status Page Loaing Failed !'
     })
