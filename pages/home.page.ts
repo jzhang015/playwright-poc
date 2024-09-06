@@ -50,11 +50,11 @@ export class HomePage {
     await this.searchRestaurantsLocator.fill('World Sqaure');
     await this.page.locator('.store-search__store-result').first().click();
     await this.orderFromLocator.click();
+    await new Promise((resolve) => setTimeout(resolve, 3000));
   }
 
   async confirmOrderSetUp(): Promise<MenuPage> {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    await this.confirmLocator.click({delay: 1000});
+    await this.confirmLocator.click();
 
     return await MenuPage.load(this.page);
   }

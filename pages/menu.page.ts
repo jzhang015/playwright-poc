@@ -27,6 +27,7 @@ export class MenuPage {
     const cartIconButtonLocator = page.getByTestId('cart-yellow-button');
 
     await Promise.all([
+      new Promise((resolve) => setTimeout(resolve, 2000)),
       headermenuLocator.waitFor(),
       burritosMenuLocator.waitFor(),
     ]).catch(err => {

@@ -25,9 +25,7 @@ export class PaymentPage {
     const payNowButtonLocator = page.getByTestId('PAY NOW');
 
     await Promise.all([
-
       contactDetailsTitleLocator.waitFor({ timeout: 30000 }),
-      // cardOptionLocator.waitFor({ timeout: 50000 }),
     ]).catch(err => {
       throw 'Payment/Checkout Page Loaing Failed !'
     })
@@ -53,7 +51,8 @@ export class PaymentPage {
 
   async enterPaymentDetails() {
     await this.cardOption.click({delay: 2000});
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     const cardNumberFrame = this.page.frameLocator('iframe[name="braintree-hosted-field-number"]');
     await cardNumberFrame.locator('#credit-card-number').fill('4111111111111111');
     
